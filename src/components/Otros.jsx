@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function Otros({datos}){
     console.log(datos);
@@ -10,28 +10,24 @@ export default function Otros({datos}){
         <>
         <label htmlFor="estado">Estado:</label>
             <select name="estado" id="estado">
-                {datos.admin_name1}
+                <option value={datos.admin_name1}>{datos.admin_name1}</option>
             </select>
 
             <label htmlFor="localidad">Localidad:</label>
             <select name="estado" id="estado">
-                {datos.admin_name2}
+                <option value={datos.admin_name2}>{datos.admin_name2}</option>
             </select>
 
             <label htmlFor="municipio">Municipio:</label>
-
             <select name="estado" id="estado">
-                {datos.admin_name3}
+                <option value={datos.admin_name3}>{datos.admin_name3}</option>
             </select>
 
             <label htmlFor="georeferencia">Georeferencia:</label>
             <select name="estado" id="estado">
-                {datos.latitude}, {datos.longitude}
+                <option value={`${datos.latitude}, ${datos.longitude}`}>{`${datos.latitude}, ${datos.longitude}`}</option>
             </select>
 
-            <input type="date" name="" id="" onChange={(e)=>{
-                console.log(e.target.value);
-            }} />
         </>
     );
 }

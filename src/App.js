@@ -8,13 +8,12 @@ import './App.css';
 function App() {
 
   const [colonias, setColonias]=useState([]);
-  const [datos, setDatos]=useState({admin_name1: "prueba", admin_name2: "", admin_name3: "", latitude: "", longitude: ""});
+  const [datos, setDatos]=useState({admin_name1: "", admin_name2: "", admin_name3: "", latitude: "", longitude: ""});
   const [codigo, setCodigo]=useState("");
-  console.log("app");
 
     useEffect(()=>{
         servicio(codigo, "MX").then(res=>{
-          console.log(res);
+          //console.log(res);
           //setColonias(res.map((respuesta)=>respuesta.place_name));
           setColonias(res);
         });
@@ -26,6 +25,7 @@ function App() {
         <label htmlFor="codigo"></label>
         <input type='text' onChange={(e)=>{
           if(e.target.value.length===5){
+            setDatos({admin_name1: "", admin_name2: "", admin_name3: "", latitude: "", longitude: ""});
             setCodigo(e.target.value);
           }
 

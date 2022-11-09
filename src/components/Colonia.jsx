@@ -1,7 +1,7 @@
 export default function Colonia({colonias, setDatos}){
     
     function funcion(e){
-        console.log(colonias[e.target.value]);
+        //console.log(colonias[e.target.value]);
         //console.log(setDatos);
         setDatos(colonias[e.target.value]);
     }
